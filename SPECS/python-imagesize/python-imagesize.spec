@@ -37,8 +37,7 @@ Python 3 module to analyze jpeg/jpeg2000/png/gif image header and return image s
 %py3_install
 
 %check
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 pytest pathlib2 pluggy
+pip3 install pytest pathlib2 pluggy
 %{python3} setup.py test
 popd
 

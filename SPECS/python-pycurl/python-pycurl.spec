@@ -60,8 +60,7 @@ chmod 755 %{buildroot}%{python3_sitelib}/pycurl*.so
 export PYCURL_SSL_LIBRARY=openssl
 export PYCURL_VSFTPD_PATH=vsftpd
 
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 nose nose-show-skipped bottle==0.12.16 flaky pyflakes
+pip3 install nose nose-show-skipped bottle==0.12.16 flaky pyflakes
 rm -vf tests/multi_option_constants_test.py tests/ftp_test.py tests/option_constants_test.py tests/seek_cb_test.py tests/memory_mgmt_test.py tests/multi_timer_test.py
 LANG=en_US.UTF-8  make test PYTHON=python%{python3_version} NOSETESTS="nosetests-3.4 -v"
 

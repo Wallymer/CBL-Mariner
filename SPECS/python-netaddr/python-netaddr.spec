@@ -39,8 +39,7 @@ A network address manipulation library for Python
 ln -s netaddr %{buildroot}/%{_bindir}/netaddr3
 
 %check
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 pytest
+pip3 install pytest
 LANG=en_US.UTF-8 PYTHONPATH=./ %{python3} setup.py test
 
 %files -n python3-netaddr

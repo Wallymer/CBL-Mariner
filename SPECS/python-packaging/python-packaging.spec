@@ -43,8 +43,7 @@ Core utilities for Python packages
 %py3_install
 
 %check
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 pretend pytest
+pip3 install pretend pytest
 PYTHONPATH=./ pytest
 
 %files -n python3-packaging

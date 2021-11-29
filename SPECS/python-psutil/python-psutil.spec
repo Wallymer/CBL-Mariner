@@ -47,11 +47,7 @@ FreeBSD, OpenBSD and NetBSD, both 32-bit and 64-bit architectures, with Python v
 %py3_install
 
 %check
-easy_install_3=$(ls /usr/bin |grep easy_install |grep 3)
-$easy_install_3 linecache2
-$easy_install_3 pytest
-$easy_install_3 mock
-$easy_install_3 unittest2
+pip3 install linecache2 pytest mock unittest2
 LANG=en_US.UTF-8 make test PYTHON=python%{python3_version}
 
 %files -n python3-psutil

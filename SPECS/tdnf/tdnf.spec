@@ -112,8 +112,7 @@ cmake \
 make %{?_smp_mflags} && make python
 
 %check
-easy_install_3=$(ls /usr/bin |grep easy_install |grep 3)
-$easy_install_3 pytest
+pip3 install pytest
 cd build && make %{?_smp_mflags} check
 
 %install

@@ -44,10 +44,7 @@ sed -i 's/distclass=version.ChangelogAwareDistribution,/ /g' setup.py
 %py3_install
 
 %check
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 mock
-$easy_install_3 testscenarios
-$easy_install_3 testtools
+pip3 install mock testscenarios testtools
 %python3 -m unittest discover
 
 %files -n python3-daemon

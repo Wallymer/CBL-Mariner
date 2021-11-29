@@ -29,6 +29,7 @@ BuildRequires:  python3-cffi
 BuildRequires:  python3-cryptography
 BuildRequires:  python3-idna
 BuildRequires:  python3-packaging
+BuildRequires:  python3-pip
 BuildRequires:  python3-pyasn1
 BuildRequires:  python3-pycparser
 BuildRequires:  python3-six
@@ -47,10 +48,7 @@ High-level wrapper around a subset of the OpenSSL library.
 %py3_install
 
 %check
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 pretend
-$easy_install_3 flaky
-$easy_install_3 pytest
+pip3 install pretend flaky pytest
 PATH=%{buildroot}%{_bindir}:${PATH} \
 LANG=en_US.UTF-8  PYTHONPATH=%{buildroot}%{python3_sitelib} \
     pytest

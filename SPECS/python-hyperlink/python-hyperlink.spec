@@ -39,8 +39,7 @@ Hyperlink provides a pure-Python implementation of immutable URLs. Based on RFC 
 %py3_install
 
 %check
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 pytest
+pip3 install pytest
 pytest
 
 %files -n python3-hyperlink

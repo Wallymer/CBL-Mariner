@@ -3799,8 +3799,8 @@
         "type": "other",
         "other": {
           "name": "libxcb",
-          "version": "1.13.1",
-          "downloadUrl": "https://xcb.freedesktop.org/dist/libxcb-1.13.1.tar.bz2"
+          "version": "1.14.1",
+          "downloadUrl": "https://xcb.freedesktop.org/dist/libxcb-1.14.1.tar.bz2"
         }
       }
     },
@@ -7092,8 +7092,8 @@
         "type": "other",
         "other": {
           "name": "python3",
-          "version": "3.7.10",
-          "downloadUrl": "https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tar.xz"
+          "version": "3.9.9",
+          "downloadUrl": "https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tar.xz"
         }
       }
     },
@@ -8964,7 +8964,7 @@
         "type": "other",
         "other": {
           "name": "xcb-proto",
-          "version": "1.13",
+          "version": "1.14.1",
           "downloadUrl": "https://xcb.freedesktop.org/dist/xcb-proto-1.13.tar.bz2"
         }
       }

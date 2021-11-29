@@ -34,8 +34,7 @@ OAuthLib is a generic utility which implements the logic of OAuth without assumi
 %py3_install
 
 %check
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 mock
+pip3 install mock
 %python3 setup.py test
 
 %files -n python3-oauthlib

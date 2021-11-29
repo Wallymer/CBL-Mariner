@@ -17,6 +17,7 @@ BuildRequires:  python3-xml
 BuildRequires:  curl-devel
 BuildRequires:  openssl-devel
 BuildRequires:  python3-attrs
+BuildRequires:  python3-pip
 BuildRequires:  python3-six
 %endif
 Requires:       python3
@@ -43,8 +44,7 @@ The functionality Babel provides for internationalization (I18n) and localizatio
 ln -sfv pybabel %{buildroot}/%{_bindir}/pybabel3
 
 %check
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 pytest freezegun funcsigs pathlib2 pluggy utils
+pip3 install pytest freezegun funcsigs pathlib2 pluggy utils
 %{python3} setup.py test
 
 %files

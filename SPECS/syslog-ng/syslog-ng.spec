@@ -133,11 +133,7 @@ $easy_install_2 ply
 $easy_install_2 pep8
 make %{?_smp_mflags} check
 pushd ../p3dir
-easy_install_3=$(ls /usr/bin |grep easy_install |grep 3)
-$easy_install_3 unittest2
-$easy_install_3 nose
-$easy_install_3 ply
-$easy_install_3 pep8
+pip3 install unittest2 nose ply pep8
 make %{?_smp_mflags} check
 popd
 

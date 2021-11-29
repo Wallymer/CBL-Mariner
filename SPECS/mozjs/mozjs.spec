@@ -61,6 +61,10 @@ This contains development tools and libraries for SpiderMonkey.
 rm -rf modules/zlib
 
 %build
+mkdir -pv $(readlink /dev/shm)
+chmod 777 /dev/shm
+chmod 777 $(readlink /dev/shm)
+
 cd js/src
 
 %configure \

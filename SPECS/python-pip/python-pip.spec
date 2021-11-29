@@ -43,8 +43,7 @@ python2 setup.py build
 python2 setup.py install --prefix=%{_prefix} --root=%{buildroot}
 
 %check
-easy_install_2=$(ls %{_bindir} |grep easy_install |grep 2)
-$easy_install_2 freezegun mock pretend virtualenv scripttest pytest pytest-capturelog
+pip3 install freezegun mock pretend virtualenv scripttest pytest pytest-capturelog
 
 python setup.py test
 

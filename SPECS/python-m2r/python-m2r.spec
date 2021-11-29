@@ -44,8 +44,7 @@ M2R converts a markdown file including reST markups to a valid reST format.
 ln -s m2r %{buildroot}/%{_bindir}/m2r3
 
 %check
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 mock
+pip3 install mock
 %python3 setup.py test -s tests
 
 %files -n python3-m2r

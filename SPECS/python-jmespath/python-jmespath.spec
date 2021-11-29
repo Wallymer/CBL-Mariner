@@ -39,8 +39,7 @@ JMESPath (pronounced “james path”) allows you to declaratively specify how t
 ln -sfv jp.py %{buildroot}%{_bindir}/jp.py-%{python3_version}
 
 %check
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 nose
+pip3 install nose
 %python3 setup.py test
 
 %files -n python3-jmespath

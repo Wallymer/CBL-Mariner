@@ -40,8 +40,7 @@ executable, and which have been executed.
 %py3_install
 
 %check
-easy_install tox
-easy_install PyContracts
+pip3 install tox PyContracts
 LANG=en_US.UTF-8 tox -e py36
 
 %files -n python3-coverage

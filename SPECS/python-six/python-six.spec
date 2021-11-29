@@ -57,8 +57,7 @@ python3 setup.py install --prefix=%{_prefix} --root=%{buildroot}
 easy_install_2=$(ls /usr/bin |grep easy_install |grep 2)
 $easy_install_2 pytest
 python2 test_six.py
-easy_install_3=$(ls /usr/bin |grep easy_install |grep 3)
-$easy_install_3 pytest
+pip3 install pytest
 python3 test_six.py
 
 

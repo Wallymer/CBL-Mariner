@@ -41,8 +41,7 @@ Python Atomic file writes
 %py3_install
 
 %check
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 funcsigs pathlib2 pluggy more-itertools
+pip3 install funcsigs pathlib2 pluggy more-itertools
 cp tests/test_atomicwrites.py .
 %python3 test_atomicwrites.py
 

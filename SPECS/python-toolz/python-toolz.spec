@@ -43,8 +43,10 @@ BuildArch:      noarch
 %{?python_provide:%python_provide python%{python3_pkgversion}-%{srcname}}
 Summary:        A functional standard library for Python %{python3_version}
 BuildRequires:  python%{python3_pkgversion}-devel
-BuildRequires:  python%{python3_pkgversion}-nose
 BuildRequires:  python%{python3_pkgversion}-setuptools
+%if %{with_check}
+BuildRequires:  python%{python3_pkgversion}-pip
+%endif
 
 %description -n python%{python3_pkgversion}-%{srcname}
 %{desc}
@@ -59,6 +61,7 @@ BuildRequires:  python%{python3_pkgversion}-setuptools
 %py3_install
 
 %check
+pip3 install nose
 nosetests-%{python3_version}
 
 %files -n python%{python3_pkgversion}-%{srcname}

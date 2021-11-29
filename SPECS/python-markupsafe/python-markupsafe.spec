@@ -33,7 +33,7 @@ MarkupSafe implements a XML/HTML/XHTML Markup safe string for Python.
 %py3_install
 
 %check
-easy_install py
+pip3 install py
 %python3 setup.py test
 
 %files -n python3-markupsafe

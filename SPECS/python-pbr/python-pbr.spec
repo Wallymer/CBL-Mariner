@@ -40,15 +40,7 @@ export SKIP_PIP_INSTALL=1
 ln -s pbr %{buildroot}/%{_bindir}/pbr3
 
 %check
-easy_install_3=$(ls %{_bindir} |grep easy_install |grep 3)
-$easy_install_3 coverage
-$easy_install_3 hacking
-$easy_install_3 mock
-$easy_install_3 testrepository
-$easy_install_3 testresources
-$easy_install_3 testscenarios
-$easy_install_3 virtualenv
-$easy_install_3 wheel
+pip3 install coverage hacking mock testrepository testresources testscenarios virtualenv wheel
 %python3 setup.py test
 
 %files -n python3-pbr

@@ -71,8 +71,7 @@ This package contains files required to embed PyGObject
 %meson_install
 
 %check
-easy_install_3=$(ls /usr/bin |grep easy_install |grep 3)
-$easy_install_3 pytest
+pip3 install pytest
 python3 setup.py test
 
 %files -n python3-gobject
