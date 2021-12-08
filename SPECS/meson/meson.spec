@@ -62,14 +62,14 @@ python3 ./run_tests.py
 * Thu Feb 25 2021 Henry Li <lihl@microsoft.com> - 0.57.1-1
 - Update to 0.57.1.
 
-*   Mon Apr 13 2020 Emre Girgin <mrgirgin@microsoft.com> 0.49.2-1
--   Update to 0.49.2.
+* Mon Apr 13 2020 Emre Girgin <mrgirgin@microsoft.com> - 0.49.2-1
+- Update to 0.49.2.
 
-*   Tue Sep 03 2019 Mateusz Malisz <mamalisz@microsoft.com> 0.47.2-2
--   Initial CBL-Mariner import from Photon (license: Apache2).
+* Tue Sep 03 2019 Mateusz Malisz <mamalisz@microsoft.com> - 0.47.2-2
+- Initial CBL-Mariner import from Photon (license: Apache2).
 
-*   Mon Sep 10 2018 Srivatsa S. Bhat <srivatsa@csail.mit.edu> 0.47.2-1
--   Update to version 0.47.2
+* Mon Sep 10 2018 Srivatsa S. Bhat <srivatsa@csail.mit.edu> - 0.47.2-1
+- Update to version 0.47.2
 
-*   Wed Dec 27 2017 Anish Swaminathan <anishs@vmware.com> 0.44.0-1
--   Initial packaging
+* Wed Dec 27 2017 Anish Swaminathan <anishs@vmware.com> - 0.44.0-1
+- Initial packaging
