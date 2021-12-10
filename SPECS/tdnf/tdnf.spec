@@ -4,8 +4,8 @@
 #
 Summary:        dnf/yum equivalent using C libs
 Name:           tdnf
-Version:        2.1.0
-Release:        7%{?dist}
+Version:        3.2.2
+Release:        1%{?dist}
 License:        LGPLv2.1 AND GPLv2
 Vendor:         Microsoft Corporation
 Distribution:   Mariner
@@ -18,14 +18,7 @@ Source2:        cache-updateinfo.service
 Source3:        cache-updateinfo.timer
 Source4:        tdnfrepogpgcheck.conf
 
-Patch0:         tdnf-fix-distroverpkg-search.patch
-Patch1:         tdnf-ssl-support.patch
-Patch2:         tdnf-add-download-command.patch
-Patch3:         tdnf-add-showorder-argument.patch
-Patch4:         tdnf-add-mariner-release.patch
-Patch5:         tdnf-support-multiple-gpgkeys.patch
-Patch6:         tdnf-add-download-no-deps-command.patch
-Patch7:         tdnf-use-custom-keyring-for-gpg-checks.patch
+
 Patch8:         tdnf-mandatory-space-list-output.patch
 
 BuildRequires:  cmake
@@ -99,8 +92,8 @@ python bindings for tdnf
 %prep
 %autosetup -p1
 
-# Enable plugins in tdnf.conf
-echo plugins=1 >> resources/tdnf.conf
+# Enable plugins in the default tdnf.conf
+echo "plugins=1" >> etc/tdnf/tdnf.conf
 
 %build
 mkdir build && cd build
@@ -117,7 +110,7 @@ $easy_install_3 pytest
 cd build && make %{?_smp_mflags} check
 
 %install
-cd build && make DESTDIR=%{buildroot} install
+cd build && %make_install
 find %{buildroot} -name '*.a' -delete
 mkdir -p %{buildroot}%{_var}/cache/tdnf
 ln -sf %{_bindir}/tdnf %{buildroot}%{_bindir}/tyum
@@ -135,27 +128,12 @@ python3 setup.py install --skip-build --prefix=%{_prefix} --root=%{buildroot}
 popd
 find %{buildroot} -name '*.pyc' -delete
 
-# Pre-install
-%pre
-
-    # First argument is 1 => New Installation
-    # First argument is 2 => Upgrade
-
-# Post-install
 %post
 
     # First argument is 1 => New Installation
     # First argument is 2 => Upgrade
 
     /sbin/ldconfig
-
-# Pre-uninstall
-%preun
-
-    # First argument is 0 => Uninstall
-    # First argument is 1 => Upgrade
-
-# Post-uninstall
 %postun
 
     /sbin/ldconfig
@@ -201,6 +179,11 @@ find %{buildroot} -name '*.pyc' -delete
 %{python3_sitelib}/*
 
 %changelog
+* Wed Dec 08 2021 Mateusz Malisz <mamalisz@microsoft.com> - 3.2.2-1
+- Update to 3.2.2 version
+- Remove openssl patch (upstreamed)
+- Clean up the spec.
+
 * Mon Apr 26 2021 Thomas Crain <thcrain@microsoft.com> - 2.1.0-7
 - Replace incorrect %%{_lib} usage with %%{_libdir}
 
