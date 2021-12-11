@@ -296,6 +296,7 @@
                 "go-md2man",
                 "grpc",
                 "GSL",
+                "gtk-update-icon-cache",
                 "helm",
                 "installkernel",
                 "ivykis",
