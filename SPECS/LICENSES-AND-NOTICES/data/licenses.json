@@ -239,6 +239,7 @@
                 "squashfs-tools",
                 "sscg",
                 "tini",
+                "tinycdb",
                 "ttembed",
                 "uclibc-ng",
                 "usbredir",
