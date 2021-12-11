@@ -885,6 +885,16 @@
       "component": {
         "type": "other",
         "other": {
+          "name": "colord",
+          "version": "1.4.4",
+          "downloadUrl": "https://www.freedesktop.org/software/colord/releases/colord-1.4.4.tar.xz"
+        }
+      }
+    },
+    {
+      "component": {
+        "type": "other",
+        "other": {
           "name": "compositeproto",
           "version": "0.4.2",
           "downloadUrl": "https://www.x.org/pub/individual/proto/compositeproto-0.4.2.tar.bz2"
